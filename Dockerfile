@@ -1,7 +1,7 @@
 # Author: Irfan Sayyed
 
 # Using Node Base Image
-FROM node:14
+FROM node:18
 
 WORKDIR /app
 
@@ -18,7 +18,7 @@ COPY . .
 EXPOSE 5173
 
 # Build
-RUN npm build
+RUN npm run build
 
 # Intital command to run on container at startup
-CMD ["npm", "run" ,"dev"]
+CMD ["npm", "run" , "host"]
