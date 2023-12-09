@@ -13,3 +13,13 @@ npm install
 ```
 npm run dev
 ```
+
+- Build 
+
+```
+docker build -t mapup-docker .
+```
+
+```
+docker run -p 80:5173 mapup-docker
+```
