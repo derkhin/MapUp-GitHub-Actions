@@ -32,3 +32,4 @@ jobs:
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        aws ecs update-service --region ap-south-1 --cluster map-up-ecs-cluster --service mapup-service  --force-new-deployment
