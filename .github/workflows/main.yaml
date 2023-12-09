@@ -26,9 +26,9 @@ jobs:
     - name: Build, Tag and push the image to aws ecr
       id : build-image
       env: 
-        ECR_REGISTRY: ${{steps.login-ecr.outputs.registry}}
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: mapup-ecr
         IMAGE_TAG: latest
-      run:
+      run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTORY/$ECR_REPOSITORY:$IMAGE_TAG
